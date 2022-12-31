@@ -1,0 +1,22 @@
+/*
+
+
+This identifies an error state of overlapping fiscal periods
+
+*/
+
+
+SELECT DISTINCT a.YEAR1
+	,a.PERIODID
+	,a.PERIODDT
+	,a.PERDENDT
+FROM SY40100 a
+JOIN SY40100 b ON a.PERIODID <> b.PERIODID
+	AND a.PERIODDT <= b.PERIODDT
+	AND a.PERDENDT >= b.PERIODDT
+	AND (
+		a.PERIODID <> 0
+		AND b.PERIODID <> 0
+		)
+ORDER BY YEAR1
+	,PERIODID
