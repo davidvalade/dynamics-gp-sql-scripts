@@ -1,5 +1,5 @@
 ============
-DVPodProcess
+Microsoft Dynamics GP T-SQL Scripts
 ============
 
 A useful collection of SQL scripts for Microsoft Dynamics GP.
